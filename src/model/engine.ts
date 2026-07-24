@@ -126,8 +126,8 @@ export function evaluateScenario(input: ScenarioInput): ScenarioResult {
         ? 'An open conflict across the Taiwan Strait ending in a decisive setback raises regional escalation exposure and proliferation pressure.'
         : 'An open conflict across the Taiwan Strait ending through an off-ramp raises regional escalation exposure without the additional proliferation pressure of a decisive setback.'
     addRule(`taiwan-${controls.taiwanCrisis}`, explanation, [
-      ['taiwan', conflict ? 50 : 30], ['china', conflict ? 40 : 20], ['japan', conflict ? 20 : 10],
-      ['hong-kong', conflict ? 20 : 10], ['south-korea', conflict ? 10 : 5], ...aseanRisk(conflict ? 10 : 5),
+      ['taiwan', elevatedPressure ? 50 : 30], ['china', elevatedPressure ? 40 : 20], ['japan', elevatedPressure ? 20 : 10],
+      ['hong-kong', elevatedPressure ? 20 : 10], ['south-korea', elevatedPressure ? 10 : 5], ...aseanRisk(elevatedPressure ? 10 : 5),
     ], elevatedPressure ? [['china', 3], ['japan', 3], ['south-korea', 2], ['north-korea', 1]] : [['china', 2], ['japan', 2], ['south-korea', 1], ['north-korea', 1]])
   }
   if (controls.koreanCrisis !== 'none') {

@@ -141,7 +141,7 @@ describe('evaluateScenario', () => {
     for (const actor of ASEAN_IDS) expect(result.riskScores[actor]).toBe(25)
   })
 
-  it('uses the blockade pressure effects when an open Taiwan conflict has an off-ramp', () => {
+  it('uses the blockade scores and pressure effects when an open Taiwan conflict has an off-ramp', () => {
     const blockade = evaluateScenario({
       ...DEFAULT_SCENARIO,
       controls: { ...DEFAULT_SCENARIO.controls, taiwanCrisis: 'blockade' },
@@ -164,7 +164,8 @@ describe('evaluateScenario', () => {
     })
 
     expect(offRamp.directPressure).toEqual(blockade.directPressure)
-    expect(offRamp.riskScores).toEqual(decisiveSetback.riskScores)
+    expect(offRamp.riskScores).toEqual(blockade.riskScores)
+    expect(offRamp.riskScores).not.toEqual(decisiveSetback.riskScores)
     expect(decisiveSetback.directPressure.china).toBe(3)
     expect(decisiveSetback.directPressure.japan).toBe(3)
     expect(offRamp.directPressure.china).toBe(2)
