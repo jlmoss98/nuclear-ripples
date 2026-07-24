@@ -16,7 +16,9 @@ it('opens an accessible panel with the approved share destinations', async () =>
 
   expect(trigger).toHaveAttribute('aria-expanded', 'true')
   expect(screen.getByRole('dialog', { name: 'Share this scenario' })).toBeInTheDocument()
-  expect(screen.getByRole('textbox', { name: 'Shareable scenario link' })).toHaveValue(scenarioUrl)
+  const shareLink = screen.getByRole('textbox', { name: 'Shareable scenario link' })
+  expect(shareLink).toHaveValue(scenarioUrl)
+  expect(shareLink).toHaveAttribute('name', 'shareable-scenario-link')
 
   const bluesky = screen.getByRole('link', { name: 'Share on Bluesky' })
   const linkedIn = screen.getByRole('link', { name: 'Share on LinkedIn' })

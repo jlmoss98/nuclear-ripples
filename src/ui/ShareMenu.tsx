@@ -98,7 +98,13 @@ export function ShareMenu({ url }: ShareMenuProps) {
           <h2 id={`${PANEL_ID}-title`}>Share this scenario</h2>
           <label className="share-link-field">
             <span>Shareable scenario link</span>
-            <input value={url} readOnly onFocus={(event) => event.currentTarget.select()} onClick={(event) => event.currentTarget.select()} />
+            <input
+              name="shareable-scenario-link"
+              value={url}
+              readOnly
+              onFocus={(event) => event.currentTarget.select()}
+              onClick={(event) => event.currentTarget.select()}
+            />
           </label>
           <div className="share-destinations">
             <button ref={copyButtonRef} className="share-copy" type="button" onClick={copyLink}>
