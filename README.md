@@ -2,7 +2,7 @@
 
 **Can you avoid a tsunami?**
 
-Nuclear Ripples is a static, source-transparent policy atlas for comparing conventional drivers of East Asian nuclear escalation and proliferation pressure. Scores compare scenarios; they are not probabilities or forecasts.
+Nuclear Ripples is an interactive atlas for exploring East Asian nuclear proliferation escalation scenarios Scores compare scenarios; they are not probabilities or forecasts.
 
 ## Use the public atlas
 
